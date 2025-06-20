@@ -1,7 +1,7 @@
 # Diavgeia Data Extraction and Analysis
 
 ## Overview
-This project demonstrates the extraction, cleaning, and analysis of Greek government procurement documents (Diavgeia portal). The goal was to extract structured data from unstructured PDFs, handle missing data, validate the results with Local LLMs, and perform frequency analysis.
+This project demonstrates the extraction, cleaning and analysis of Greek government procurement documents (Diavgeia portal). The goal was to extract structured data from unstructured PDFs, handle missing data, validate the results with Local LLMs and perform frequency analysis.
 
 ![Workflow Diagram](./images/workflow.png)
 
@@ -9,7 +9,7 @@ This project demonstrates the extraction, cleaning, and analysis of Greek govern
 This work was conducted as a collaborative team effort within the framework of the Master’s program in Data Science at the International Hellenic University.
 
 ## Contents
-- KNIME workflow for data extraction, processing, and LLM validation.
+- KNIME workflow for data extraction, processing, LLM validation.
 - Power BI report for data visualization and insights
 - Documentation including final report and presentation slides
 - Test data used and output csv's
