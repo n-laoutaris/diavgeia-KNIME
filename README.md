@@ -20,33 +20,25 @@ The main challenge is to transform these messy documents into structured, analyz
 
 ## Methodology
 
-**Use Case & Scope Refinement:**
+**Use Case & Scope Refinement:** 
+Focus was narrowed to procurement documents from the Diavgeia API, for the whole year 2024. 
+These records contain both structured metadata and links to the original unstructured PDF documents. 
+Out of 340,000 retrieved entries, 170,000 procurement documents were chosen for the use case of analyzing supplier frequency to detect disproportionately frequent contractors.
+However, early exploration revealed a major roadblock: nearly 58% of entries had missing or invalid key data.
 
-Focus was narrowed to procurement documents from the Diavgeia API, for the whole year 2024. These records contain both structured metadata and links to the original unstructured PDF documents.
-
-Out of 340,000 retrieved entries, we filtered down to 170,000 procurement documents for our use case: analyzing supplier frequency to detect disproportionately frequent contractors. However, early exploration revealed a major roadblock: nearly 58% of entries had missing or invalid key data, including TINs and supplier names.
-
-**Cleaning & Preprocessing:**
-
-- Standardized inconsistent name and subject entries (e.g., lowercase/uppercase mismatches).
-- Removed duplicate or conflicting entries by selecting the most frequent supplier name per TIN.
-- Dropped entries with missing or unverifiable TINs or names, despite attempts to salvage them through other metadata.
-
+**Cleaning & Preprocessing:** 
+Standardized inconsistently formatted entries.
+Removed duplicate or conflicting entries by selecting the most frequent attribute per TIN.
+Dropped entries with missing or unverifiable TINs, despite attempts to salvage them through other metadata.
 This phase involved a mix of KNIME workflows and Power BI preprocessing tools.
 
 **Frequency Analysis:**
-
-With a cleaned dataset in hand, one can compute how frequently each supplier (by TIN) appeared. Z-scores were used to flag statistical outliers. Visualized the results in Power BI.
-
-Despite surface-level insights, doubts remained. The volume of removed or missing data renders the reliability of any findings questionable: major players might be overlooked just because their records were malformed.
+Z-scores were used to flag statistical outliers, visualizing the results in Power BI.
+Despite those surface-level insights, doubts remained; the volume of removed data renders the reliability of any findings questionable.
 
 **LLM-based Information Extraction:**
-
-In response, a bold idea: could Large Language Models help recover the missing data? To test this, a controlled experiment was created:
-- Select 30 hand-picked procurement PDFs with verified TINs and supplier names.
-- Test different LLMs to extract those values directly from the raw document text.
-- Compare results against ground truth to evaluate extraction accuracy.
-
+In response, a bold idea: could Large Language Models help recover the missing data? To test this, a controlled experiment was created.
+Hand-picked a number of procurement PDFs with verified attributes. Tested different LLMs to extract those attributes directly from the raw document text. Compared results against ground truth to evaluate extraction accuracy.
 This step marked a shift from traditional data cleaning to AI-assisted imputation.
 
 ## Results and Key Takeaways
@@ -73,4 +65,4 @@ My ultimate, very ambitious goal is to train a domain-specific LLM, specialized 
 - `Report.pdf`: A written report detailing the methodology and results.
 
 ## Project Context
-This work was conducted as a collaborative team effort as the coursework of the Data Science for Business class of the MSc in Data Science programme at the International Hellenic University.
+This project was developed as part of the Data Science for Business course for the MSc in Data Science Programme at the International Hellenic University. 
