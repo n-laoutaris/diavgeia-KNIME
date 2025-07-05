@@ -1,6 +1,6 @@
 # Diavgeia Data Extraction and Analysis
 
-This project demonstrates the extraction, cleaning and analysis of Greek government procurement documents taken from the public Diavgeia portal. The goal was to extract structured data from unstructured PDFs, handle missing data using Large Language Models, validate the results and perform frequency analysis.
+This project demonstrates the extraction, cleaning and analysis of Greek government procurement documents sourced from the public Diavgeia portal. The goal was to extract structured data from unstructured PDFs, handle missing data using Large Language Models, validate the results and perform frequency analysis.
 
 ![Workflow Diagram](./images/workflow.png)
 
@@ -11,19 +11,16 @@ It contains millions of government documents with valuable data about about publ
 These documents are written in natural language, include scanned or poorly formatted content and often lack consistent structure.
 These characteristics, coupled with the absence of strategy and analytical tools, has turned the platform into a document graveyard.
 
-This project tackles the challenge of extracting and analyzing data from the Diavgeia portal.
-The main challenge is to transform these messy documents into structured, analyzable datasets.
+This project tackles the challenge of transforming these messy, inconsistent documents into structured, analyzable datasets.
 
 ## The Dataset
 
-340,000 documents were retrieved using the Diavgeia API. They were procurement documents from the entirely of the year 2024. API calls returned tuples containing a ULR to the document itself, along with many features structured in a relational way, entered into the system by clerks. From those, 170,000 were kept as part of our use case. An extremely significant 58% of this set contained missing or invalid data, rendering it unusable for analysis.
+340,000 documents were retrieved using the Diavgeia API, covering the entirety of 2024. Each API response included metadata and a link to the original PDF. From those, 170,000 were kept for focused analysis. However, an extremely significant portion contained missing or invalid key fields, rendering it unusable for analysis.
 
 ## Methodology
 
 **Use Case & Scope Refinement:** 
-Focus was narrowed to procurement documents from the Diavgeia API, for the whole year 2024. 
-These records contain both structured metadata and links to the original unstructured PDF documents. 
-Out of 340,000 retrieved entries, 170,000 procurement documents were chosen for the use case of analyzing supplier frequency to detect disproportionately frequent contractors.
+Focus was narrowed to procurement documents and the use case of analyzing supplier frequency to detect disproportionately frequent contractors.
 However, early exploration revealed a major roadblock: nearly 58% of entries had missing or invalid key data.
 
 **Cleaning & Preprocessing:** 
